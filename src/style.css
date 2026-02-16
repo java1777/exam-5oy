@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  --dark-blue: #00093c;
+  --grey: #8d8d8d;
+  --blue: #27aae1;
+  --mainBg: #f6f7f9;
+}
+
+@theme inline {
+  --color-dark-blue: var(--dark-blue);
+  --color-grey: var(--grey);
+  --color-blue: var(--blue);
+  --color-mainBg: var(--mainBg);
+}
+
+.dark {
+  --dark-blue: #4ce954;
+  --grey: #f52eca;
+  --blue: #b80909;
+  --mainBg: hsl(224, 85%, 49%);
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  color: #fff;
+  background-color: #000;
+}

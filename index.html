@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exam-5oy</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <header
+      id="header"
+      class="fixed top-0 left-0 w-full z-10 flex items-center justify-center"
+    >
+      <div class="container lg:px-8 xl:px-12 px-4 py-6 mx-auto max-w-480">
+        <div id="header-wrapper" class="flex items-center justify-between">
+          <div id="header-nav" class="flex gap-7.5 xl:gap-15">
+            <div id="logo">
+              <a href="#hero"
+                ><img src="src/assets/icon/onair-logo.svg" alt="logo"
+              /></a>
+            </div>
+            <nav
+              id="header-navbar"
+              class="justify-center hidden md:flex items-center"
+            >
+              <ul
+                class="flex xl:gap-11.25 items-center justify-center xl:text-2xl text-[18px] font-medium"
+              >
+                <li class="cursor-pointer hover:text-[#e13c52]">
+                  <a href="#films">Movies</a>
+                </li>
+                <li class="cursor-pointer hover:text-[#e13c52]">
+                  <a href="#TV-Series">Series</a>
+                </li>
+                <li class="cursor-pointer hover:text-[#e13c52]">
+                  <a href="#Channels">Channels</a>
+                </li>
+                <li class="cursor-pointer hover:text-[#e13c52]">
+                  <a href="#Music">Music</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div id="header-socials" class="flex xl:gap-17.5">
+            <div
+              class="md:flex hidden gap-2 items-center justify-center cursor-pointer"
+            >
+              <a href="#"
+                ><img src="src/assets/icon/icons_search.svg" alt="search"
+              /></a>
+              <p class="xl:text-2xl text-[18px] font-semibold">Search</p>
+            </div>
+            <div
+              class="md:flex hidden gap-2 items-center justify-center cursor-pointer"
+            >
+              <a href="#"><img src="src/assets/icon/user.svg" alt="user" /></a>
+              <p class="xl:text-2xl text-[18px] font-semibold">Sign in</p>
+            </div>
+          </div>
+          <div
+            id="menuBtn"
+            class="md:hidden flex flex-col gap-1 justify-end cursor-pointer z-10"
+          >
+            <span class="line1 w-10 h-1 bg-white rounded-full"></span>
+            <span class="line2 w-7 h-1 bg-white rounded-full self-end"></span>
+            <span class="line3 w-5 h-1 bg-white rounded-full self-end"></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div
+      id="menu-bar"
+      class="fixed w-full h-screen left-0 transition-transform duration-300 ease-in-out -translate-x-full bg-[#0000009c] to-0 lg:hidden flex flex-col pt-30 z-10"
+    >
+      <div class="container px-5 flex flex-col gap-5">
+        <div
+          id="menu-search"
+          class="flex gap-1 pl-3 py-3 pr-25 bg-[#232229] rounded-3xl max-w-[320px]"
+        >
+          <label for=""
+            ><img src="src/assets/icon/icons_search.svg" alt="search"
+          /></label>
+          <input
+            type="search"
+            id="search"
+            name="search"
+            placeholder="Search"
+            class="text-[#4e3c5e]"
+          />
+        </div>
+        <nav id="header-navbar" class="flex items-center">
+          <ul class="flex flex-col gap-7 xl:text-2xl text-[18px] font-medium">
+            <li><a href="#films">Movies</a></li>
+            <li><a href="#TV-Series">Series</a></li>
+            <li><a href="#Channels">Channels</a></li>
+            <li><a href="#Music">Music</a></li>
+          </ul>
+        </nav>
+        <div class="flex gap-2 items-center">
+          <a href="#"><img src="src/assets/icon/user.svg" alt="user" /></a>
+          <p class="xl:text-2xl text-[18px] font-semibold cursor-pointer">
+            Sign in
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <main class="pt-25">
+      <section id="hero" class="relative flex justify-center w-full">
+        <div class="flex flex-col-reverse lg:flex-col w-full max-w-480">
+          <div
+            class="bg-[#202429] lg:bg-transparent w-full flex justify-center items-center relative z-20"
+          >
+            <div
+              class="container px-4 lg:px-17 mx-auto max-w-480 py-20 lg:py-37.5 lg:relative lg:z-20 lg:pt-62.5 2xl:pt-100"
+            >
+              <div
+                id="hero_title"
+                class="2xl:max-w-130.75 max-w-100 lg:max-w-87.5 mx-auto lg:mx-0 text-center lg:text-left"
+              >
+                <h2
+                  class="text-[32px] sm:text-[40px] lg:text-[34px] 2xl:text-[48px] font-light leading-tight relative z-20"
+                >
+                  Dive into a <span class="font-bold">universe</span> of
+                  un-ending content and channels
+                </h2>
+              </div>
+              <div
+                id="hero-btn"
+                class="flex justify-center mt-6 lg:justify-start"
+              >
+                <button
+                  class="text-2xl px-8.5 py-2.5 rounded-full font-medium cursor-pointer bg-[#e13c52] relative z-20"
+                >
+                  Start FREE trial
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="w-full lg:absolute lg:top-0 lg:left-1/2 lg:-translate-x-1/2 lg:h-150 2xl:h-272.75 lg:max-w-480 lg:z-0 overflow-hidden relative"
+          >
+            <img
+              src="./src/assets/img/hero-bg.png"
+              alt="hero-bg"
+              class="h-full w-full object-cover lg:object-center object-[75%_center]"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="films" class="flex 2xl:pt-87.5">
+        <div
+          class="lg:px-8.75 px-4 py-6 mx-auto w-full max-w-450 flex flex-col gap-8.75"
+        >
+          <div id="films-title">
+            <h2 class="text-6xl font-bold">Movies</h2>
+          </div>
+          <div
+            id="Movies"
+            class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-7 gap-x-3.75 gap-y-5"
+          ></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-[#141414] pt-5">
+      <div
+        class="lg:px-8.75 px-4 py-6 mx-auto w-full max-w-450 flex flex-col sm:flex-row justify-between"
+      >
+        <div id="column1" class="flex flex-col gap-8.75">
+          <div id="footer-logo">
+            <a href="#">
+              <img src="/src/assets/icon/footer-logo.svg" alt="logo" />
+            </a>
+          </div>
+          <div id="footer-desc" class="max-w-70 pt-15 text-[#8D8D8D]">
+            <p>
+              Hot Africa, we offer original, exclusive and premium stories.
+              Everything you want to watch, anytime, anywhere and as much.
+            </p>
+          </div>
+          <div class="flex gap-5">
+            <a href="">
+              <img src="/src/assets/img/appstore.png" alt="appstore"
+            /></a>
+            <a href="">
+              <img src="/src/assets/img/googleplay.png" alt="googleplay"
+            /></a>
+          </div>
+          <div class="flex gap-2.5">
+            <a href=""
+              ><img src="/src/assets/icon/facebook.svg" alt="facebook"
+            /></a>
+            <a href=""
+              ><img src="/src/assets/icon/instagramm.svg" alt="instagram"
+            /></a>
+            <a href=""
+              ><img src="/src/assets/icon/twitter.svg" alt="twitter"
+            /></a>
+            <a href=""
+              ><img src="/src/assets/icon/youtube.svg" alt="youtube"
+            /></a>
+          </div>
+          <div class="pr-5 flex flex-col gap-5 text-[#8D8D8D]">
+            <p class="flex gap-5">
+              <span class="cursor-pointer">Terms of use</span>
+              <span class="cursor-pointer"> Privacy Policy</span>
+              <span class="cursor-pointer"> SiteMap</span>
+            </p>
+            <p>Copyright © 2022 Hot Africa. All rights reserved.</p>
+          </div>
+        </div>
+        <div
+          id="column2"
+          class="grid gird-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-20"
+        >
+          <div id="column2-1" class="flex flex-col gap-6.25">
+            <div class="md:flex hidden gap-2 cursor-pointer">
+              <img src="/src/assets/icon/footer-avatar.svg" alt="avatar" />
+              <p
+                class="xl:text-2xl text-[18px] font-semibold hover:text-[#e13c52]"
+              >
+                Sign in
+              </p>
+            </div>
+            <span class="text-[#8D8D8D]">Personal data</span>
+            <span class="text-[#8D8D8D]">Choosing a Plan</span>
+            <span class="text-[#8D8D8D]">Payment</span>
+          </div>
+          <div id="column2-2" class="flex flex-col gap-6.25">
+            <p class="text-3xl cursor-pointer font-bold hover:text-[#e13c52]">
+              Movies
+            </p>
+            <span class="text-[#8D8D8D]">Lock Upp</span>
+            <span class="text-[#8D8D8D]">Pavitra Rishta</span>
+            <span class="text-[#8D8D8D]">Girgit</span>
+            <span class="text-[#8D8D8D]">Hai Taubba Season 3</span>
+            <span class="text-[#8D8D8D]">Cartel</span>
+            <span class="text-[#8D8D8D]">Crimes And Confessions</span>
+            <span class="text-[#8D8D8D]">Puncch Beat Season 2</span>
+            <span class="text-[#8D8D8D]">Broken But Beautiful Season 3</span>
+          </div>
+          <div id="column2-3" class="flex flex-col gap-6.25">
+            <p class="cursor-pointer font-bold text-3xl hover:text-[#e13c52]">
+              <a href="#">Series</a>
+            </p>
+            <span class="text-[#8D8D8D]">X.X.X. Season 2</span>
+            <span class="text-[#8D8D8D]">Gandii Baat Season 5</span>
+            <span class="text-[#8D8D8D]">Gandii Baat Season 6</span>
+            <span class="text-[#8D8D8D]">Broken But Beautiful Season 1</span>
+            <span class="text-[#8D8D8D]">Broken But Beautiful Season 2</span>
+            <span class="text-[#8D8D8D]">Class Of 2020</span>
+            <span class="text-[#8D8D8D]">Bekaaboo Season 1</span>
+            <span class="text-[#8D8D8D]">Ragini MMS Returns Season 2</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/index.js"></script>
+  </body>
+</html>
