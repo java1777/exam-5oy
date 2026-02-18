@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/src/assets/icon/onair-logo.svg"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Details - 5m-exam</title>
+    <link href="/src/style.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-[#191919]">
+    <header
+      id="header"
+      class="fixed top-0 left-0 w-full z-50 flex items-center justify-center bg-[#00000094]"
+    >
+      <div class="container lg:px-8.75 xl:px-12.5 px-4 py-6 mx-auto max-w-475">
+        <div id="header-wrapper" class="flex items-center justify-between">
+          <div id="header-navbar-wrapper" class="flex gap-15">
+            <div id="logo">
+              <a href="index.html">
+                <img src="src/assets/icon/onair-logo.svg" alt="Logo" />
+              </a>
+            </div>
+            <nav
+              id="header-navbar"
+              class="justify-center hidden md:flex items-center"
+            >
+              <ul
+                class="flex xl:gap-18.75 gap-11.25 items-center text-white xl:text-2xl text-[18px] font-medium"
+              >
+                <li class="cursor-pointer">
+                  <a href="#">Movies</a>
+                </li>
+                <li class="cursor-pointer">
+                  <a href="#">Series</a>
+                </li>
+                <li class="cursor-pointer">
+                  <a href="#">Channels</a>
+                </li>
+                <li class="cursor-pointer">
+                  <a href="#">Music</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div id="header-socials" class="flex xl:gap-7.5 gap-5 text-white">
+            <div
+              id="menu-search"
+              class="hidden lg:flex gap-1.25 pl-3 py-3 pr-25 bg-[#232229] rounded-3xl max-w-[320px]"
+            >
+              <label for="search-desktop">
+                <img src="/src/assets/icon/icons_search.svg" alt="Search" />
+              </label>
+              <input
+                type="search"
+                id="search-desktop"
+                name="search"
+                placeholder="Search"
+                class="bg-transparent text-white outline-none"
+              />
+            </div>
+
+            <div
+              class="lg:hidden flex gap-2 items-center justify-center cursor-pointer"
+            >
+              <img src="/src/assets/icon/icons_search.svg" alt="Search" />
+              <p class="xl:text-2xl text-[18px] font-semibold">Search</p>
+            </div>
+
+            <div
+              class="md:flex hidden gap-2 items-center justify-center cursor-pointer"
+            >
+              <img src="/src/assets/icon/user.svg" alt="User" />
+              <p class="xl:text-2xl text-[18px] font-semibold">Profile</p>
+            </div>
+          </div>
+
+          <div
+            id="menuBtn"
+            class="menu md:hidden flex flex-col gap-1 justify-end cursor-pointer z-50"
+          >
+            <span
+              class="line1 w-9.75 h-1.25 bg-white rounded-full transition-all duration-300"
+            ></span>
+            <span
+              class="line2 w-6.75 h-1.25 bg-white rounded-full self-end transition-all duration-300"
+            ></span>
+            <span
+              class="line3 w-4.75 h-1.25 bg-white rounded-full self-end transition-all duration-300"
+            ></span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div
+      id="menu-bar"
+      class="fixed w-full h-screen left-0 top-0 transition-transform duration-300 ease-in-out -translate-x-full bg-[#0000009c] lg:hidden flex flex-col pt-30 z-40"
+    >
+      <div class="container px-5 flex flex-col gap-5">
+        <div
+          id="menu-search-mobile"
+          class="flex gap-1.25 pl-3 py-3 pr-25 bg-[#232229] rounded-3xl max-w-[320px]"
+        >
+          <label for="search-mobile">
+            <img src="/src/assets/icon/icons_search.svg" alt="Search" />
+          </label>
+          <input
+            type="search"
+            id="search-mobile"
+            name="search"
+            placeholder="Search"
+            class="bg-transparent text-white outline-none"
+          />
+        </div>
+
+        <nav id="header-navbar-mobile" class="flex items-center">
+          <ul
+            class="flex flex-col gap-7.5 text-white xl:text-2xl text-[18px] font-medium"
+          >
+            <li class="cursor-pointer">
+              <a href="#">Movies</a>
+            </li>
+            <li class="cursor-pointer">
+              <a href="#">Series</a>
+            </li>
+            <li class="cursor-pointer">
+              <a href="#">Channels</a>
+            </li>
+            <li class="cursor-pointer">
+              <a href="#">Music</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="flex gap-2 items-center text-white">
+          <img
+            src="src/assets/icon/user.svg"
+            alt="User"
+            class="cursor-pointer"
+          />
+          <p class="xl:text-2xl text-[18px] font-semibold cursor-pointer">
+            Sign in
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <main class="pt-25 min-h-screen">
+      <section class="flex">
+        <div
+          class="container lg:px-8.75 xl:px-12.5 px-4 py-6 mx-auto max-w-475"
+        >
+          <div id="about-content"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-[#141414] pt-19.25">
+      <div
+        class="lg:px-8.75 xl:px-12.5 px-4 py-6 mx-auto w-full max-w-450 flex flex-col sm:flex-row justify-between gap-10"
+      >
+        <div id="column1" class="flex flex-col gap-8.75">
+          <div id="footer-logo">
+            <a href="index.html">
+              <img src="src/assets/icon/footer-logo.svg" alt="Logo" />
+            </a>
+          </div>
+          <div id="footer-desc" class="max-w-70 pt-15 text-[#8D8D8D]">
+            <p>
+              Hot Africa, we offer original, exclusive and premium stories.
+              Everything you want to watch, anytime, anywhere and as much.
+            </p>
+          </div>
+          <div class="flex gap-5">
+            <a href="#">
+              <img src="src/assets/img/appstore.png" alt="App Store" />
+            </a>
+            <a href="#">
+              <img src="src/assets/img/googleplay.png" alt="Google Play" />
+            </a>
+          </div>
+          <div class="flex gap-2.5">
+            <a href="#">
+              <img src="src/assets/icon/facebook.svg" alt="Facebook" />
+            </a>
+            <a href="#">
+              <img src="src/assets/icon/instagramm.svg" alt="Instagram" />
+            </a>
+            <a href="#">
+              <img src="src/assets/icon/twitter.svg" alt="Twitter" />
+            </a>
+            <a href="#">
+              <img src="src/assets/icon/youtube.svg" alt="YouTube" />
+            </a>
+          </div>
+          <div class="pr-5 flex flex-col gap-5 text-[#8D8D8D]">
+            <p class="flex flex-wrap gap-5">
+              <span class="cursor:text-white">Terms of use</span>
+              <span class="cursor:text-white">Privacy Policy</span>
+              <span class="cursor:text-white">SiteMap</span>
+            </p>
+            <p>Copyright © 2022 Hot Africa. All rights reserved.</p>
+          </div>
+        </div>
+
+        <div
+          id="column2"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-y-10"
+        >
+          <div id="column2-1" class="flex flex-col gap-6.25">
+            <div class="md:flex hidden gap-2 cursor-pointer">
+              <img src="src/assets/icon/footer-avatar.svg" alt="User" />
+              <p class="xl:text-2xl text-[18px] font-semibold text-white">
+                Sign in
+              </p>
+            </div>
+            <span class="text-[:text-white cursor-pointer">Personal data</span>
+            <span class="text-[:text-white cursor-pointer"
+              >Choosing a Plan</span
+            >
+            <span class="text-[:text-white cursor-pointer">Payment</span>
+          </div>
+
+          <div id="column2-2" class="flex flex-col gap-6.25">
+            <p class="text-3xl cursor-pointer text-white font-bold">
+              <a href="#">Movies</a>
+            </p>
+            <span class="text-[:text-white cursor-pointer">Lock Upp</span>
+            <span class="text-[:text-white cursor-pointer">Pavitra Rishta</span>
+            <span class="text-[:text-white cursor-pointer">Girgit</span>
+            <span class="text-[:text-white cursor-pointer"
+              >Hai Taubba Season 3</span
+            >
+            <span class="text-[:text-white cursor-pointer">Cartel</span>
+            <span class="text-[:text-white cursor-pointer"
+              >Crimes And Confessions</span
+            >
+            <span class="text-[:text-white cursor-pointer"
+              >Puncch Beat Season 2</span
+            >
+            <span class="text-[:text-white cursor-pointer"
+              >Broken But Beautiful Season 3</span
+            >
+          </div>
+
+          <div id="column2-3" class="flex flex-col gap-6.25">
+            <p class="cursor-pointer text-white font-bold text-3xl">
+              <a href="#">Series</a>
+            </p>
+            <span class="text-[:text-white cursor-pointer"
+              >X.X.X. Season 2</span
+            >
+            <span class="text-[:text-white cursor-pointer"
+              >Gandii Baat Season 5</span
+            >
+            <span class="text-[:text-white cursor-pointer"
+              >Gandii Baat Season 6</span
+            >
+            <span class="text-[:text-white cursor-pointer"
+              >Broken But Beautiful Season 1</span
+            >
+            <span class="text-[:text-white cursor-pointer"
+              >Broken But Beautiful Season 2</span
+            >
+            <span class="text-[:text-white cursor-pointer">Class Of 2020</span>
+            <span class="text-[:text-white cursor-pointer"
+              >Bekaaboo Season 1</span
+            >
+            <span class="text-[:text-white cursor-pointer"
+              >Ragini MMS Returns Season 2</span
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/about.js"></script>
+  </body>
+</html>

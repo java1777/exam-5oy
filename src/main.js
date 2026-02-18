@@ -5,7 +5,7 @@ const menuLine2Element = document.querySelector(".line2");
 const menuLine3Element = document.querySelector(".line3");
 const body = document.body;
 
-menuBtnElement.addEventListener("click", () => {
+function toggleMenu() {
   menuLine1Element.classList.toggle("rotate-45");
   menuLine1Element.classList.toggle("translate-y-1.5");
   menuLine2Element.classList.toggle("opacity-0");
@@ -19,15 +19,36 @@ menuBtnElement.addEventListener("click", () => {
   } else {
     body.classList.add("no-scroll");
   }
+}
+
+menuBtnElement.addEventListener("click", (e) => {
+  e.stopPropagation();
+  toggleMenu();
+});
+
+menuInfoElement.addEventListener("click", (e) => {
+  if (e.target === menuInfoElement) {
+    toggleMenu();
+  }
+});
+
+const menuLinks = menuInfoElement.querySelectorAll("a");
+menuLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    toggleMenu();
+  });
 });
 
 async function getTitles() {
   try {
     const res = await fetch("https://api.imdbapi.dev/titles");
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
     const data = await res.json();
-    return data.titles;
+    return data.titles || [];
   } catch (err) {
-    console.log("err", err);
+    console.error("API xatosi:", err);
     return [];
   }
 }
@@ -40,10 +61,34 @@ async function writeProducts() {
     return;
   }
 
+  productsListElement.innerHTML =
+    '<p class="text-white text-center col-span-full">Yuklanmoqda...</p>';
+
   try {
     const titles = await getTitles();
 
+    if (titles.length === 0) {
+      productsListElement.innerHTML =
+        '<p class="text-white text-center col-span-full">Ma\'lumot topilmadi!</p>';
+      return;
+    }
+
+    productsListElement.innerHTML = "";
+
     titles.forEach((element) => {
+      if (!element.primaryImage || !element.primaryImage.url) {
+        console.warn("Rasm yo'q:", element.primaryTitle);
+        return;
+      }
+
+      if (!element.genres || !Array.isArray(element.genres)) {
+        element.genres = ["Unknown"];
+      }
+
+      if (!element.rating || !element.rating.aggregateRating) {
+        element.rating = { aggregateRating: "N/A" };
+      }
+
       const cardElement = document.createElement("div");
       cardElement.classList.add(
         "cursor-pointer",
@@ -56,8 +101,13 @@ async function writeProducts() {
 
       const cardImage = document.createElement("img");
       cardImage.setAttribute("src", element.primaryImage.url);
-      cardImage.setAttribute("alt", element.primaryTitle);
+      cardImage.setAttribute("alt", element.primaryTitle || "Film");
       cardImage.classList.add("w-full", "h-80", "object-cover");
+
+      cardImage.onerror = function () {
+        this.src = "https://via.placeholder.com/300x400?text=No+Image";
+      };
+
       cardImageElement.appendChild(cardImage);
 
       const cardInfoElement = document.createElement("div");
@@ -65,7 +115,7 @@ async function writeProducts() {
 
       const cardTitle = document.createElement("h3");
       cardTitle.classList.add("text-lg", "font-semibold", "line-clamp-1");
-      cardTitle.innerHTML = `<a href="./about.html?id=${element.id}" class="hover:text-[#e13c52]">${element.primaryTitle}</a>`;
+      cardTitle.innerHTML = `<a href="./about.html?id=${element.id}" class="hover:text-[#e13c52]">${element.primaryTitle || "Unknown"}</a>`;
 
       const cardGenres = document.createElement("span");
       cardGenres.classList.add("text-sm", "text-[#8D8D8D]");
@@ -84,7 +134,8 @@ async function writeProducts() {
       productsListElement.appendChild(cardElement);
     });
   } catch (err) {
-    console.log("Error:", err);
+    console.error("Xatolik:", err);
+    productsListElement.innerHTML = `<p class="text-white text-center col-span-full">Xatolik: ${err.message}</p>`;
   }
 }
 

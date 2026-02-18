@@ -60,11 +60,17 @@
           </div>
           <div
             id="menuBtn"
-            class="md:hidden flex flex-col gap-1 justify-end cursor-pointer z-10"
+            class="md:hidden flex flex-col gap-1 justify-end cursor-pointer z-50"
           >
-            <span class="line1 w-10 h-1 bg-white rounded-full"></span>
-            <span class="line2 w-7 h-1 bg-white rounded-full self-end"></span>
-            <span class="line3 w-5 h-1 bg-white rounded-full self-end"></span>
+            <span
+              class="line1 w-10 h-1 bg-white rounded-full transition-all duration-300"
+            ></span>
+            <span
+              class="line2 w-7 h-1 bg-white rounded-full self-end transition-all duration-300"
+            ></span>
+            <span
+              class="line3 w-5 h-1 bg-white rounded-full self-end transition-all duration-300"
+            ></span>
           </div>
         </div>
       </div>
@@ -72,7 +78,7 @@
 
     <div
       id="menu-bar"
-      class="fixed w-full h-screen left-0 transition-transform duration-300 ease-in-out -translate-x-full bg-[#0000009c] to-0 lg:hidden flex flex-col pt-30 z-10"
+      class="fixed w-full h-screen left-0 transition-transform duration-300 ease-in-out -translate-x-full bg-[#0000009c] top-0 lg:hidden flex flex-col pt-30 z-40"
     >
       <div class="container px-5 flex flex-col gap-5">
         <div
